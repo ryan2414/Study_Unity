@@ -1,5 +1,10 @@
 using UnityEngine;
 
+class Tank
+{
+    // 온갖 정보
+    public float speed = 10.0f;
+}
 
 public class PlayerController : MonoBehaviour
 {
