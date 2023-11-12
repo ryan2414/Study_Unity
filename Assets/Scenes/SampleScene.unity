@@ -563,7 +563,7 @@ GameObject:
   - component: {fileID: 1256466992}
   m_Layer: 8
   m_Name: Cube One
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -696,7 +696,7 @@ GameObject:
   - component: {fileID: 1862898731}
   m_Layer: 8
   m_Name: Cube Two
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
