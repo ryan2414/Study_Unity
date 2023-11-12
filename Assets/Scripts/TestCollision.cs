@@ -59,7 +59,6 @@ public class TestCollision : MonoBehaviour
         //        Debug.Log($"Raycast Camera @ {hit.collider.gameObject.name}");
         //    }
         //}
-
     }
 
 }
