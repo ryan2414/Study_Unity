@@ -9,7 +9,7 @@ public class TestCollision : MonoBehaviour
     // 3) 상대한테 Collider가 있어야 한다. (IsTrigger : Off)
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log($"Collision @ {collision.gameObject.name}");    
+        Debug.Log($"Collision @ {collision.gameObject.name}");
     }
 
     // 1) 둘 다 Collider가 있어야 한다.
@@ -19,6 +19,15 @@ public class TestCollision : MonoBehaviour
     {
         Debug.Log($"Trigger ! {other.name}");
 
+    }
+
+    private void Update()
+    {
+        // Local <-> World <-> Viewport <-> Screen (화면)
+
+        //Debug.Log(Input.mousePosition); // Screen
+
+        Debug.Log( Camera.main.ScreenToViewportPoint(Input.mousePosition)); // Viewport
     }
 
 }
