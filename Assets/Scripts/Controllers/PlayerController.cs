@@ -88,4 +88,9 @@ public class PlayerController : MonoBehaviour
             _state = PlayerState.Moving;
         }
     }
+
+    void OnRunEvent()
+    {
+        Debug.Log("OnRunEvent!");
+    }
 }
