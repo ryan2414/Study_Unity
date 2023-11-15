@@ -29,6 +29,13 @@ public class UI_Button : UI_Popup
     // 리플렉션
     private void Start() 
     {
+        Init();
+    }
+
+    public override void Init()
+    {
+        base.Init();
+
         Bind<Button>(typeof(Buttons));
         Bind<TextMeshProUGUI>(typeof(Texts));
         Bind<GameObject>(typeof(GameObjects));
@@ -42,6 +49,7 @@ public class UI_Button : UI_Popup
         AddUIEvent(go, (PointerEventData data) => { go.transform.position = data.position; }, Define.UIEvent.Drag);
 
     }
+
 
     int _count = 0;
 

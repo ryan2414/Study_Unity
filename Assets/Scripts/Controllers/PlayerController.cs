@@ -25,7 +25,6 @@ public class PlayerController : MonoBehaviour
 
         Managers.UI.ShowPopupUI<UI_Button>();
 
-        Managers.UI.ClosePopupUI();
     }
 
 
