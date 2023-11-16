@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7002712539141632922}
   - component: {fileID: 7919664379165950488}
   - component: {fileID: 8661907807521227517}
+  - component: {fileID: 659406039347993260}
   m_Layer: 5
   m_Name: UI_Inven
   m_TagString: Untagged
@@ -102,6 +103,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &659406039347993260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64672768962610103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034b73cf5f711a545adee2759a2875c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3989576997987931989
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,7 +128,7 @@ GameObject:
   - component: {fileID: 1193166546923946446}
   - component: {fileID: 2336313554489021149}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: GridPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
