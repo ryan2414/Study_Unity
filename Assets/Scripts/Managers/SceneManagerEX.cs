@@ -7,7 +7,7 @@ public class SceneManagerEX
 
     public void LoadScene(Define.Scene scene)
     {
-        CurrentScene.Clear();
+        Managers.Clear();
         SceneManager.LoadScene(GetSceneName(scene));
     }
 
@@ -15,5 +15,10 @@ public class SceneManagerEX
     {
         string name = System.Enum.GetName(typeof(Define.Scene), scene);
         return name;
+    }
+
+    public void Clear()
+    {
+        CurrentScene.Clear();
     }
 }

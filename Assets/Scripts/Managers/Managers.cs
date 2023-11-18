@@ -12,6 +12,7 @@ public class Managers : MonoBehaviour
     SceneManagerEX _scene = new SceneManagerEX();
     UIManager _ui = new UIManager();
     SoundManager _sound = new SoundManager();
+
     public static InputManager Input { get {  return Instance._input; } }
     public static ResourceManager Resource { get { return Instance._resource; } }
     public static SceneManagerEX Scene { get { return Instance._scene; } }
@@ -45,6 +46,15 @@ public class Managers : MonoBehaviour
             s_instance._sound.Init();
         }
 
+    }
+
+    // 씬 이동시 초기화
+    public static void Clear()
+    {
+        Sound.Clear();
+        Input.Clear();
+        Scene.Clear();
+        UI.Clear();
     }
 
     
