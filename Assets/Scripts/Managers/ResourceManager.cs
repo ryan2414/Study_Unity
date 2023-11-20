@@ -11,17 +11,17 @@ public class ResourceManager
 
     public GameObject Instantiate(string path, Transform parent = null)
     {
+        // 1. original 이미 들고 있으면 바로 사용
         GameObject prefab = Load<GameObject>($"Prefabs/{path}");
         if (prefab == null)
         {
             Debug.Log($"Failed to load prefab : {path}");
             return null;
         }
-           
+        
+        // 2. 혹시 풀링된 애가 있을까?
         GameObject go = Object.Instantiate(prefab, parent);
-        int index = go.name.IndexOf("(Clone)");
-        if (index > 0)
-            go.name = go.name.Substring(0, index);
+        go.name = prefab.name;
 
         return go; // 재귀호출 방지 
     }
@@ -30,6 +30,8 @@ public class ResourceManager
     {
         if (go == null)
             return;
+
+        // 만약에 풀링이 필요한 아이라면 -> Pool Manager한테 위탁
 
         Object.Destroy(go, time);
     }

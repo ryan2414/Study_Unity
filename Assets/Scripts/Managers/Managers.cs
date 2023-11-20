@@ -12,12 +12,14 @@ public class Managers : MonoBehaviour
     SceneManagerEX _scene = new SceneManagerEX();
     UIManager _ui = new UIManager();
     SoundManager _sound = new SoundManager();
+    PoolManager _pool = new PoolManager();
 
     public static InputManager Input { get {  return Instance._input; } }
     public static ResourceManager Resource { get { return Instance._resource; } }
     public static SceneManagerEX Scene { get { return Instance._scene; } }
     public static UIManager UI { get { return Instance._ui; } }
     public static SoundManager Sound { get { return Instance._sound; } }
+    public static PoolManager Pool { get { return Instance._pool; } }
 
     private void Start()
     {
