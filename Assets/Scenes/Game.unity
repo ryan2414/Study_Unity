@@ -2302,9 +2302,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 407777105867898620, guid: 47963849f18b8594c8b9b00e6fcc8878, type: 3}
       insertIndex: -1
       addedObject: {fileID: 945035733}
-    - targetCorrespondingSourceObject: {fileID: 407777105867898620, guid: 47963849f18b8594c8b9b00e6fcc8878, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 945035737}
   m_SourcePrefab: {fileID: 100100000, guid: 47963849f18b8594c8b9b00e6fcc8878, type: 3}
 --- !u!1 &518745227
 GameObject:
@@ -2561,14 +2558,6 @@ CapsuleCollider:
   m_Height: 1.68
   m_Direction: 1
   m_Center: {x: 0, y: 0.77, z: 0}
---- !u!81 &945035737
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 945035728}
-  m_Enabled: 1
 --- !u!1 &1382181873
 GameObject:
   m_ObjectHideFlags: 0
@@ -2802,8 +2791,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4157475331229848176, guid: 548c2147c1283d743a358f966508eac7, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
