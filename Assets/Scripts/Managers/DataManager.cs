@@ -1,27 +1,23 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
-public class Stat
+public interface ILoader<Key, Value>
 {
-    public int level;
-    public int hp;
-    public int attack;
+    Dictionary<Key, Value> MakeDict();
 }
 
-[Serializable]
-public class StatData
+public class DataManager
 {
-    public List<Stat> stats = new List<Stat>();
-}
+    public Dictionary<int, Stat> StatDic { get; private set; } = new Dictionary<int, Stat>();
 
-public class DataManager 
-{
     public void Init()
     {
-        TextAsset textAsset = Managers.Resource.Load<TextAsset>("Data/StatData");
-        StatData statData = JsonUtility.FromJson<StatData>(textAsset.text);
+        StatDic = LoadJson<StatData, int, Stat>("StatData").MakeDict();
+    }
+
+    TLoader LoadJson<TLoader, Key, Value>(string path) where TLoader : ILoader<Key, Value>
+    {
+        TextAsset textAsset = Managers.Resource.Load<TextAsset>($"Data/{path}");
+        return JsonUtility.FromJson<TLoader>(textAsset.text);
     }
 }
