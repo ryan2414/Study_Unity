@@ -14,6 +14,7 @@ public class GameScene : BaseScene
 
         Dictionary<int, Data.Stat> dic =  Managers.Data.StatDic;
 
+        gameObject.GetOrAddComponent<CursorController>();
     }
 
     public override void Clear()
