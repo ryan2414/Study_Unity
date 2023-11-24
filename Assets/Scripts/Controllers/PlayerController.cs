@@ -90,8 +90,16 @@ public class PlayerController : MonoBehaviour
 
     void OnHitEvent()
     {
-        Debug.Log("OnHitEvent");
-
+        // 상대방에게 데미지를 넣어주는 게 더 좋다.
+        if (_lockTarget != null)
+        {
+            Stat targetStat = _lockTarget.GetComponent<Stat>();
+            PlayerStat myStat = gameObject.GetComponent<PlayerStat>();
+            int damage = Mathf.Max(0, myStat.Attack - targetStat.Defense);
+            Debug.Log(damage);
+            targetStat.Hp -= damage;
+        }
+        
         if (_stopSkill)
         {
             State = PlayerState.Idle;
