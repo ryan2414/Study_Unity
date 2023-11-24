@@ -6232,12 +6232,11 @@ GameObject:
   - component: {fileID: 7962003182441450576}
   - component: {fileID: 2257318932798053619}
   - component: {fileID: 1542977239062875694}
-  - component: {fileID: 3843800369893714127}
   - component: {fileID: 7546328773360958286}
   - component: {fileID: -4389524843785200233}
   m_Layer: 0
   m_Name: UnityChan
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6352,28 +6351,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!195 &3843800369893714127
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8059944887955435479}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!114 &7546328773360958286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6386,7 +6363,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f6ee03b08cafb4a92c77fc310677e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 10
+  _destPos: {x: 0, y: 0, z: 0}
+  _state: 2
+  _lockTarget: {fileID: 0}
 --- !u!114 &-4389524843785200233
 MonoBehaviour:
   m_ObjectHideFlags: 0
