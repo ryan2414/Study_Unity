@@ -50,11 +50,12 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-       
         _stat = gameObject.GetComponent<PlayerStat>();
 
         Managers.Input.MouseAction -= OnMouseEvent;
         Managers.Input.MouseAction += OnMouseEvent;
+        
+        Managers.UI.MakeWorldSpaceUI<UI_HPBar>(transform);
     }
 
     private void Update()
