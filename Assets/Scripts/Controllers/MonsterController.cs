@@ -13,6 +13,7 @@ public class MonsterController : BaseController
     
     public override void Init()
     {
+        WorldObjectType = Define.WorldObject.Monster;
         _stat = gameObject.GetComponent<Stat>();
 
         if (gameObject.GetComponentInChildren<UI_HPBar>() == null)
@@ -21,8 +22,6 @@ public class MonsterController : BaseController
 
     protected override void UpdateIdle()
     {
-        Debug.Log("Monster UpdateIdle");
-        
         // TODO : 매니저가 생기면 옮기자
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player == null)
@@ -93,7 +92,7 @@ public class MonsterController : BaseController
 
             if (targetStat.Hp <= 0)
             {
-                GameObject.Destroy(targetStat.gameObject);
+                Managers.Game.Despawn(targetStat.gameObject);
             }
 
             if (targetStat.Hp > 0)

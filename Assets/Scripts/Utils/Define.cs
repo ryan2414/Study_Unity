@@ -1,5 +1,11 @@
 public class Define 
 {
+    public enum WorldObject
+    {
+        Unknown,
+        Player,
+        Monster,
+    }
     public enum Layer
     {
         Monster = 8,
