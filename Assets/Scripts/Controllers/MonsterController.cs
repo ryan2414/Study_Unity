@@ -22,8 +22,7 @@ public class MonsterController : BaseController
 
     protected override void UpdateIdle()
     {
-        // TODO : 매니저가 생기면 옮기자
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        GameObject player = Managers.Game.GetPlayer();
         if (player == null)
             return;
 
@@ -38,7 +37,6 @@ public class MonsterController : BaseController
 
     protected override void UpdateMoving()
     {
-        Debug.Log("Monster UpdateMoving");
         // 플레이어가 내 사정거리보다 가까우면 공격
         if (_lockTarget != null)
         {
@@ -71,7 +69,6 @@ public class MonsterController : BaseController
 
     protected override void UpdateSkill()
     {
-        Debug.Log("Monster UpdateSkill");
         if (_lockTarget != null)
         {
             Vector3 dir = _lockTarget.transform.position - transform.position;
@@ -82,18 +79,10 @@ public class MonsterController : BaseController
 
     void OnHitEvent()
     {
-        Debug.Log("Monster OnHitEvent");
-
         if (_lockTarget != null)
         {
             Stat targetStat = _lockTarget.GetComponent<Stat>();
-            int damage = Mathf.Max(0, _stat.Attack - targetStat.Defense);
-            targetStat.Hp -= damage;
-
-            if (targetStat.Hp <= 0)
-            {
-                Managers.Game.Despawn(targetStat.gameObject);
-            }
+            targetStat.OnAttacked(_stat);
 
             if (targetStat.Hp > 0)
             {
